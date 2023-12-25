@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="container p-5" style="width:50%;margin:auto;">
+    {% for m in messages%}
+    <h4 class="text-{{m.tags}}">{{m}}</h4>
+    {%endfor%}
+   <h1 class="text-center m-5 p-5"> {{user.first_name}} {{user.last_name}} welcome to profile</h1>
+
+   <a href="{% url 'pwdold' %}" class="btn btn-danger m-3 p-3">Change password using old password</a>
+   <a href="{% url 'pwd' %}" class="btn btn-warning m-3 p-3">Change password without old password</a>
+
+</div>
+
+{%endblock%}
